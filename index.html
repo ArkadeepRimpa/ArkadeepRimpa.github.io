@@ -7,11 +7,16 @@
 <head>
 	<title>Wedding Invitation</title>
 <meta name="viewport" content="width = 1050, user-scalable = no" />
+<link rel="icon" type="image/png" href="pics/favicon.png" />
 <script type="text/javascript" src="js/jquery.min.1.7.js"></script>
 <script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
 <script type="text/javascript" src="lib/hash.js"></script>
 </head>
 <body>
+
+<audio  id="background_audio" src="audio/background.mp3" loop = "true" autoplay= "true">
+</audio>
+<img src="pics/speaker_louder_32.png" id="mute"></img>
 
 <div id="canvas">
 
@@ -29,6 +34,23 @@
 
 <script type="text/javascript">
 
+var audio = document.getElementById('background_audio');
+
+document.getElementById('mute').addEventListener('click', function (e)
+{
+    e = e || window.event;
+    audio.muted = !audio.muted;
+    e.preventDefault();
+    image = document.getElementById('mute')
+	if (image.src.match("speaker_off_32")) 
+	{
+        image.src = "pics/speaker_louder_32.png";
+    } 
+    else 
+    {
+        image.src = "pics/speaker_off_32.png";
+    }
+}, false);
 
 function loadApp() {
 
@@ -310,6 +332,7 @@ yepnope({
 });
 
 </script>
+
 
 </body>
 </html>
