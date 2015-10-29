@@ -4,21 +4,73 @@
 
 function addPage(page, book) {
 
+
+	if(page == 6)
+	{
+		addPageMap(page, book)
+	}
+	else
+	{
+		var id, pages = book.turn('pages');
+
+		// Create a new element for this page
+		var element = $('<div />', {});
+
+		// Add the page to the flipbook
+		if (book.turn('addPage', element, page)) {
+
+			// Add the initial HTML
+			// It will contain a loader indicator and a gradient
+			element.html('<div class="gradient"></div><div class="loader"></div>');
+
+			// Load the page
+			loadPage(page, element);
+		}
+	}
+
+}
+
+
+
+function addPageMap(page, book) {
+
 	var id, pages = book.turn('pages');
 
-	// Create a new element for this page
-	var element = $('<div />', {});
+	if (!book.turn('hasPage', page)) {
 
-	// Add the page to the flipbook
-	if (book.turn('addPage', element, page)) {
+		var element = $('<div />',
+			{'class': 'own-size',
+				css: {width: 461, height: 600}
+			}).
+			html('<div class="loader"></div>');
 
-		// Add the initial HTML
-		// It will contain a loader indicator and a gradient
-		element.html('<div class="gradient"></div><div class="loader"></div>');
+		if (book.turn('addPage', element, page)) {
+			loadPageMap(page, element);
+		}
 
-		// Load the page
-		loadPage(page, element);
 	}
+}
+
+function loadPageMap(page, pageElement) {
+
+/* 	$.ajax({type: "GET",url: "page6.html"}).
+		done(function(pageHtml) {
+			alert(pageHtml);
+			pageElement.html(pageHtml);
+		})
+		.fail(function()  {
+			alert("Sorry. Server unavailable. ");
+}); */
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+		alert(xhttp.responseText)
+      pageElement.innerHTML = xhttp.responseText;
+    }
+  }
+  xhttp.open("GET", "~/page6.txt", true);
+  xhttp.send();
 
 }
 

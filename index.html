@@ -53,6 +53,8 @@ document.getElementById('mute').addEventListener('click', function (e)
     }
 }, false);
 
+
+
 function loadApp() {
 
  	$('#canvas').fadeIn(1000);
@@ -104,13 +106,23 @@ function loadApp() {
 
 
 			// Events
-
+			
+			
+			
 			when: {
 				turning: function(event, page, view) {
 					
 					var book = $(this),
 					currentPage = book.turn('page'),
+					
+				
+				
+
+					
+					
 					pages = book.turn('pages');
+					
+					
 			
 					// Update the current URI
 
