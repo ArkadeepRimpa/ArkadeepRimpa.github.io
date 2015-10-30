@@ -61,17 +61,6 @@ function loadPageMap(page, pageElement) {
 		done(function(pageHtml) {
 			pageElement.html(pageHtml);
 		});
-
- /* var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-		alert(xhttp.responseText)
-      pageElement.innerHTML = xhttp.responseText;
-    }
-  }
-  xhttp.open("GET", "~/page6.txt", true);
-  xhttp.send();
- */
 }
 
 function loadPage(page, pageElement) {
