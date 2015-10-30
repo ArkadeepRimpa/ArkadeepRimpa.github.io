@@ -40,7 +40,7 @@ function addPageMap(page, book) {
 
 		var element = $('<div />',
 			{'class': 'own-size',
-				css: {width: 461, height: 600, margin:auto, overflow:auto}
+				css: {width: 461, height: 600}
 			}).
 			html('<div class="loader"></div>');
 
