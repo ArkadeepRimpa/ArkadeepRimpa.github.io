@@ -55,12 +55,8 @@ function loadPageMap(page, pageElement) {
 
  	$.ajax({type: "GET",url: "pages/page6.html"}).
 		done(function(pageHtml) {
-			alert(pageHtml);
 			pageElement.html(pageHtml);
-		})
-		.fail(function()  {
-			alert("Sorry. Server unavailable. ");
-});
+		});
 
 /*  var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
