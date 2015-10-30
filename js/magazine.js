@@ -58,6 +58,7 @@ function loadPageMap(page, pageElement) {
 		url: "pages/page6.html",
 		dataType: "json"}).
 		done(function(pageHtml) {
+			alert(pageHtml);
 			pageElement.html(pageHtml);
 		});
 }
