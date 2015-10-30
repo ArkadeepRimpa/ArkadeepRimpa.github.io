@@ -56,8 +56,7 @@ function loadPageMap(page, pageElement) {
  	$.ajax({
 		type: "GET",
 		url: "pages/page6.html",
-		dataType: "json",
-		async: false}).
+		dataType: "json"}).
 		done(function(pageHtml) {
 			pageElement.html(pageHtml);
 		});
