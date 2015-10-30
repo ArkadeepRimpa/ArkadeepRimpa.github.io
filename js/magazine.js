@@ -55,10 +55,10 @@ function loadPageMap(page, pageElement) {
 
  	$.ajax({
 		type: "GET",
-		url: "pages/page6.html",
-		dataType: "json"}).
+		url: "page6.html",
+		dataType: "json",
+		async: false}).
 		done(function(pageHtml) {
-			alert(pageHtml);
 			pageElement.html(pageHtml);
 		});
 }
