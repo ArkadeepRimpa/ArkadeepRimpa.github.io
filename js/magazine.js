@@ -53,7 +53,11 @@ function addPageMap(page, book) {
 
 function loadPageMap(page, pageElement) {
 
- 	$.ajax({type: "GET",url: "pages/page6.html"}).
+ 	$.ajax({
+		type: "GET",
+		url: "pages/page6.html",
+		dataType: "json",
+		async: false}).
 		done(function(pageHtml) {
 			pageElement.html(pageHtml);
 		});
