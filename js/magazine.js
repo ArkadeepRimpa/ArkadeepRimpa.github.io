@@ -53,16 +53,13 @@ function addPageMap(page, book) {
 
 function loadPageMap(page, pageElement) {
 
-/* 	$.ajax({type: "GET",url: "page6.html"}).
+ 	$.ajax({type: "GET",url: "page6.html"}).
 		done(function(pageHtml) {
 			alert(pageHtml);
 			pageElement.html(pageHtml);
-		})
-		.fail(function()  {
-			alert("Sorry. Server unavailable. ");
-}); */
+		});
 
-  var xhttp = new XMLHttpRequest();
+ /* var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
 		alert(xhttp.responseText)
@@ -71,7 +68,7 @@ function loadPageMap(page, pageElement) {
   }
   xhttp.open("GET", "~/page6.txt", true);
   xhttp.send();
-
+ */
 }
 
 function loadPage(page, pageElement) {
