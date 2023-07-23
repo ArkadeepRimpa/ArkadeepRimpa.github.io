@@ -13,11 +13,11 @@
 <script type="text/javascript" src="lib/hash.js"></script>
 </head>
 <body>
-
-<audio  id="background_audio" src="audio/background.mp3" loop = "true" autoplay= "true">
+<audio id="background_audio" loop>
+	<source src="audio/background.mp3" type="audio/mpeg">
 	Not supported
 </audio>
-<img src="pics/speaker_louder_32.png" id="mute"></img>
+<img src="pics/speaker_off_32.png" id="mute"></img>
 
 <div id="canvas">
 
@@ -40,17 +40,19 @@ var audio = document.getElementById('background_audio');
 document.getElementById('mute').addEventListener('click', function (e)
 {
     e = e || window.event;
-    audio.muted = !audio.muted;
-    e.preventDefault();
     image = document.getElementById('mute')
 	if (image.src.match("speaker_off_32")) 
 	{
         image.src = "pics/speaker_louder_32.png";
+		audio.load();
+		audio.play();
     } 
     else 
     {
         image.src = "pics/speaker_off_32.png";
+		audio.pause();
     }
+    e.preventDefault();
 }, false);
 
 
